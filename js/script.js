@@ -1,56 +1,20 @@
-var accordion = $('body').find('[data-behavior="accordion"]');
-var expandedClass = 'is-expanded';
+(function($) {
+    $('.accordion > li:eq(0) a').addClass('active').next().slideDown();
 
-$.each(accordion, function () { 
+    $('.accordion a').click(function(j) {
+        var dropDown = $(this).closest('li').find('p');
 
-  var accordionItems = $(this).find('[data-binding="expand-accordion-item"]');
+        $(this).closest('.accordion').find('p').not(dropDown).slideUp();
 
-  $.each(accordionItems, function () { 
-    var $this = $(this);
-    var triggerBtn = $this.find('[data-binding="expand-accordion-trigger"]');
-    
-    var setHeight = function (nV) {
-      var innerContent = nV.find('.accordion__content-inner')[0],
-          maxHeight = $(innerContent).outerHeight(),
-          content = nV.find('.accordion__content')[0];
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+        } else {
+            $(this).closest('.accordion').find('a.active').removeClass('active');
+            $(this).addClass('active');
+        }
 
-      if (!content.style.height || content.style.height === '0px') {
-        $(content).css('height', maxHeight);
-      } else {
-        $(content).css('height', '0px');
-      }
-    };
-    
-    var toggleClasses = function (event) {
-      var clickedItem = event.currentTarget;
-      var currentItem = $(clickedItem).parent();
-      var clickedContent = $(currentItem).find('.accordion__content')
-      $(currentItem).toggleClass(expandedClass);
-      setHeight(currentItem);
-      
-      if ($(currentItem).hasClass('is-expanded')) {
-        $(clickedItem).attr('aria-selected', 'true');
-        $(clickedItem).attr('aria-expanded', 'true');
-        $(clickedContent).attr('aria-hidden', 'false');
+        dropDown.stop(false, true).slideToggle();
 
-      } else {
-        $(clickedItem).attr('aria-selected', 'false');
-        $(clickedItem).attr('aria-expanded', 'false');
-        $(clickedContent).attr('aria-hidden', 'true');
-      }
-    }
-    
-    triggerBtn.on('click', event, function (e) {
-      e.preventDefault();
-      toggleClasses(event);
+        j.preventDefault();
     });
-
-    $(triggerBtn).on('keydown', event, function (e) {
-      if (e.keyCode === 13 || e.keyCode === 32) {
-        e.preventDefault();
-        toggleClasses(event);
-      }
-    });
-  });
-
-});
+})(jQuery);
