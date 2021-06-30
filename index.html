@@ -1,92 +1,51 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-<title>Accordion</title>
-<meta charset="utf-8">
-	<link rel="stylesheet" href="css/main.css">
+	<title>Accordion</title>
+  	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
-<body>
-<section class="ftco-section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 text-center">
-			</div>
-		</div>
-		<div class="row justify-content-center">
-			<div class="col-md-6">
-					<div id="accordion" class="myaccordion w-100">
-						<div class="card">
-							<div class="card-header p-0" id="headingOne">
-								<button class="d-flex px-4 py-3 align-items-center justify-content-between btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-									<div class="heading d-flex align-items-center">
-										<h3 class="mb-0">Your Childhood</h3>
-									</div>
-									<div class="icon d-flex align-items-center justify-content-center">
-										<i class="fa" aria-hidden="true"></i>
-									</div>
-								</button>
-							</div>
-							<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-								<div class="card-body p-4 pt-md-3">
-									<p>From the time we are born until the age of five, our brains develop faster than at any other period of our lives. <br>
-									During this period of rapid brain development, children are constantly absorbing information. Sometimes this information can develop into a limiting belief. <br>
-									As children, we simply accept something as true because our brains are still developing and we do not yet have a complete understanding of how the world works. <br>
-									For example, if your parents were always yelling at each other, your subconscious mind may have thought that getting angry and raising your voice are natural ways of resolving conflict. <br>
-									Similarly, if your parents were always saying things like “we are poor”, you might suffer from a lower sense of self-worth. You may even associate other peoples' values with how much money they make. <br>
-									These beliefs can stay with you into adulthood, preventing you from developing healthy relationships with yourself and other people.</p>
-								</div>
-							</div>
-						</div>
-							<div class="card">
-								<div class="card-header p-0" id="headingTwo">
-									<button class="d-flex px-4 py-3 align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-										<div class="heading d-flex align-items-center">
-											<h3 class="mb-0">Your Past Experiences and Trauma</h3>
-										</div>
-										<div class="icon d-flex align-items-center justify-content-center">
-											<i class="fa" aria-hidden="true"></i>
-										</div>
-									</button>
-								</div>
-							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-								<div class="card-body p-4 pt-md-3">
-									<p>Another source of limiting beliefs comes from our own experiences and personal traumas. Here is an example: <br>
-									Have you ever found it difficult to trust someone new after being hurt by an ex-partner or spouse? <br>
-									If you answered yes, then you have experienced a limiting belief which stems from personal trauma. If left unchecked, that belief could stop you from developing deep and meaningful relationships with future partners. <br>
-									Post-traumatic stress disorder (PTSD) is an extreme form of trauma — it has been linked with higher activity in the areas of the brain that processes fear, and less activation in the prefrontal cortex (the area of the brain that acts towards your goals). <br>
-									In other words, a traumatic experience makes it easier for your brain to develop beliefs based on emotion rather than facts.</p>
-								</div>
-							</div>
-						</div>
-					<div class="card">
-						<div class="card-header p-0" id="headingThree">
-							<button class="d-flex px-4 py-3 align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-								<div class="heading d-flex align-items-center">
-									<h3 class="mb-0">Your Culture and Community</h3>
-								</div>
-								<div class="icon d-flex align-items-center justify-content-center">
-									<i class="fa" aria-hidden="true"></i>
-								</div>
-							</button>
-						</div>
-					<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-						<div class="card-body p-4 pt-md-3">
-							<p>We are all influenced in some way by our culture and community. Things like religion, family, and education affect our values and the way we see the world. <br>
-							However, some of these values can directly oppose our own values and limit us from living an authentic life. <br>
- 							An example of this would be if someone told you that being a lawyer means you are more successful than if you were a musician and, as a result, you decide not to pursue a career in music. <br>
-							It is natural to have a set of values derived from your culture and community. However, if these values stop you from living your life authentically that is a limitation. <br>
-							As you can see, limiting beliefs come from the places that are most personal to us, which is why they are powerful. <br>
-							The good news is that you can empower yourself to overcome limiting beliefs. To do this, you must first identify what your limiting beliefs are. </p>
-						</div>
-					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-		<script src="js/main-one.min.js"></script><script>eval(mod_pagespeed_8RQ2b7qKPb);</script>
-		<script>eval(mod_pagespeed_rMllF8qjv9);</script>
-		<script src="js/main-two.min.js"></script><script>eval(mod_pagespeed_FFvSr_bqah);</script>
-	</body>
+  <body>
+    <section class="accordion" role="tablist" aria-live="polite" data-behavior="accordion">
+
+      <article class="accordion__item js-show-item-default" data-binding="expand-accordion-item">
+        <span id="tab1" tabindex="0" class="accordion__title" aria-controls="panel1" role="tab" aria-selected="false" aria-expanded="false" data-binding="expand-accordion-trigger">
+          <h3>Your Childhood</h3>
+        </span>
+
+        <div id="panel1" class="accordion__content" role="tabpanel" aria-hidden="true" aria-labelledby="tab1" data-binding="expand-accordion-container">
+          <div class="accordion__content-inner">
+            <p>Your Childhood Lorem Ipsum</p>
+          </div>
+        </div>
+
+      </article>
+
+      <article class="accordion__item js-show-item-default" data-binding="expand-accordion-item">
+        <span id="tab2" tabindex="0" class="accordion__title" aria-controls="panel2" role="tab" aria-selected="false" aria-expanded="false" data-binding="expand-accordion-trigger">
+          <h3>Your Past Experiences and Trauma</h3>
+        </span>
+
+        <div id="panel2" class="accordion__content" role="tabpanel" aria-hidden="true" aria-labelledby="tab2" data-binding="expand-accordion-container">
+          <div class="accordion__content-inner">
+            <p>Your Past Experiences and Trauma Lorem Ipsum</p>
+          </div>
+        </div>
+      </article>
+      
+      <article class="accordion__item js-show-item-default" data-binding="expand-accordion-item">
+        <span id="tab3" tabindex="0" class="accordion__title" aria-controls="panel3" role="tab" aria-selected="false" aria-expanded="false" data-binding="expand-accordion-trigger">
+          <h3>Your Culture and Community</h3>
+        </span>
+
+        <div id="panel3" class="accordion__content" role="tabpanel" aria-hidden="true" aria-labelledby="tab3" data-binding="expand-accordion-container">
+          <div class="accordion__content-inner">
+            <p>Your Culture and Community Lorem Ipsum</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><script  src="js/script.js"></script>
+</body>
 </html>
